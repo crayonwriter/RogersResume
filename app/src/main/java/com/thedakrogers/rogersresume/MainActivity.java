@@ -25,5 +25,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ViewPager container = (ViewPager) findViewById(R.id.container);
+        ResumeFragmentAdapter adapter = new ResumeFragmentAdapter(getSupportFragmentManager());
+        container.setAdapter(adapter);
     }
 }
