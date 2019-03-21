@@ -1,5 +1,6 @@
 package com.thedakrogers.rogersresume;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ViewPager container = (ViewPager) findViewById(R.id.container);
-        ResumeFragmentAdapter adapter = new ResumeFragmentAdapter(getSupportFragmentManager());
+        ResumeFragmentAdapter adapter = new ResumeFragmentAdapter(this, getSupportFragmentManager());
         container.setAdapter(adapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(container);
     }
 }
